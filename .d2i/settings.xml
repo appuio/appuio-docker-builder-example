@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Use a OpenShift secret if you need to add credentials for your private artifact repository! -->
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <profiles>
+     <profile>
+       <id>myprofile</id>
+       <repositories>
+         <repository>
+           <id>my-repo</id>
+           <name>your custom repo</name>
+           <url>https://raw.githubusercontent.com/appuio/hello-world-war/master/repo</url>
+         </repository>
+       </repositories>
+     </profile>
+  </profiles>
+
+ <activeProfiles>
+   <activeProfile>myprofile</activeProfile>
+ </activeProfiles>
+</settings>

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+ARTIFACT="ch.appuio:hello-world-war:1.0.0:war"
+
+yum install -y maven
+
+mkdir -p $HOME/.m2
+cp -f .d2i/settings.xml $HOME/.m2
+
+mvn -U org.apache.maven.plugins:maven-dependency-plugin:2.10:copy -Dartifact="${ARTIFACT}" -Dproject.basedir="tmp" -DoutputDirectory=.
+mv *.war ROOT.war
+
